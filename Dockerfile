@@ -12,6 +12,15 @@ WORKDIR /usr/src/app/client
 COPY client/package*.json ./
 RUN npm install
 
+# Used to toggle between local & remote environments
+ENV REACT_APP_ENV=development
+
+# Local server URL, default value specified
+ENV REACT_APP_LOCAL_SERVER_URL="http://localhost:3009/api"
+
+# if deploying on remote server, specify URL here
+ENV REACT_APP_PROD_SERVER_URL=
+
 WORKDIR /usr/src/app/server
 COPY server/package*.json ./
 RUN npm install
