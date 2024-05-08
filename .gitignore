@@ -107,3 +107,4 @@ server/database.sqlite3
 server/dw.json
 
 client/.vscode/
+client/package-lock.json
